@@ -1,0 +1,10 @@
+<div>
+  <i>Location {{id}}</i>
+  <div>{{address.address}}</div>
+  <div *ngIf="address.neighborhood">{{address.neighborhood}}</div>
+  <div>{{address.city}}, {{address.state}} {{address.zip}}</div>
+  <div *ngIf="address['status-code']">Status Code: {{address["status-code"]}}</div>
+  <div *ngIf="address.building">
+    Building type: {{address.building.type}}
+  </div>
+</div>

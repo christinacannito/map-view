@@ -1,0 +1,12 @@
+      <div class="list-group">
+        <!-- Using "a href" since it changes cursor to indicate clickability" -->
+        <a href="javascript:void(0)" (click)="getAddresses(0)" class="list-group-item disabled">
+          Previous few addresses
+        </a>
+        <p class="list-group-item" *ngFor="let address of addresses; let i = index">
+          <app-address-detail [id]=i+1 [address]="address"></app-address-detail>
+        </p>
+        <a href="javascript:void(0)" (click)="getAddresses(1)" class="list-group-item active">
+          Next few addresses
+        </a>
+      </div>

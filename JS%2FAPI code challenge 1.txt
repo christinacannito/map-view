@@ -1,0 +1,141 @@
+﻿JS/API code challenge
+
+
+  
+
+
+
+Looking at the mock ups provided create a single page application ( HTML, CSS and JS ). The single page application should illustrate knowledge of MVC architecture and basic object operations ( async load, parse).
+
+
+Make two async GET call to our API or use a JSON file to get the response arrays as in example bellow and display those addresses in the front end. For example, all addresses are in a JSON object in one file and you want to display all the address in a view that matches the mock up. 
+
+
+The objective is to show well organized code, handling of click events, use of functions, changing the view of a template/working with templates and working with data. Please use our documentation provided that will show you how to create a map, add points to the map and how to delete points from the map.  You can use any front end framework you would like.
+
+
+If you have any questions or comments please do not hesitate to contact us. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Multiple Points Request
+
+
+API URL: https://api.mapfit.com/v1/geocode?api_key=591dccc4e499ca0001a4c6a4376d9e037bb8498a5d301c0f08a1f275
+
+
+
+
+Request 1:
+[{"building":true,"address":"119 W 24th St, New York, NY"},
+{"building":true,"address":"99 Margaret Corbin Dr, New York, NY"},
+{"building":true,"address":"1000 5th Ave, New York, NY"}]
+
+
+Request 2:
+[{"building":true,"address":"118 w 42nd st, new york, ny"},
+{"building":true,"address":" stainway st, astoria, queens, ny"}]
+
+
+
+
+Response 1
+[{
+  "city": "New York",
+  "zip": "10011",
+  "state": "NY",
+  "neighborhood": "",
+  "status-code": 1,
+  "building": {
+    "type": "Polygon",
+    "coordinates": [[[-73.992954, 40.744257], [-73.993136, 40.744006], [-73.993448, 40.744138], [-73.993294, 40.744349], [-73.993133, 40.744281], [-73.993104, 40.744321], [-73.992954, 40.744257]]]
+  },
+  "address": "119 W 24th St",
+  "entrances": [{
+    "lon": -73.99324,
+    "place-type": "entrance of place",
+    "lat": 40.74405,
+    "entrance-type": "pedestrian-primary"
+  }]
+},
+ {
+  "city": "New York",
+  "zip": "10040",
+  "state": "NY",
+  "neighborhood": "",
+  "status-code": 2,
+  "address": "99 Margaret Corbin Dr",
+  "entrances": [{
+    "lat": 40.862873,
+    "lon": -73.932840,
+    "place-type": "interpolated point"
+  }]
+}, 
+{
+  "city": "New York",
+  "zip": "10001  ",
+  "state": "NY",
+  "neighborhood": "",
+  "status-code": 1,
+  "building": {
+
+
+  },
+  "address": "1000 5th Ave",
+  "entrances": [{
+    "lon": -73.963155,
+    "place-type": "entrance of place",
+    "lat": 40.778374,
+    "entrance-type": "pedestrian-primary"
+  }]
+}]
+
+
+
+
+Response 2
+
+
+[{
+  "city": "New York",
+  "zip": "10036",
+  "state": "NY",
+  "neighborhood": "",
+  "status-code": 2,
+  "address": "118 W 42nd St",
+  "entrances": [{
+    "lat": 40.754967,
+    "lon": -73.985065,
+    "place-type": "interpolated point"
+  }]
+},
+{
+  "city": "Astoria",
+  "location": {
+    "lat": 40.76301,
+    "lon": -73.9157199,
+    "place-type": "here-provided"
+  },
+  "zip": "11103",
+  "state": "NY",
+  "neighborhood": "Astoria",
+  "country": "USA",
+  "address": "Steinway St, Astoria, NY 11103, United States"
+}]
